@@ -12,7 +12,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="(mi, index) in select" :key="index">
+        <tr v-for="(mi, index) in ShowMenuSelect" :key="index">
           <td>{{ mi.NameProduct }}</td>
           <td>{{ mi.Price }}</td>
           <td>{{ mi.Amount }}</td>
@@ -25,7 +25,7 @@
 
 <script>
 // @ is an alias to /src
-import { mapState } from "vuex";
+import { mapGetters } from "vuex";
 import User from "../components/User.vue";
 
 export default {
@@ -34,7 +34,7 @@ export default {
     User
   },
   computed: {
-    ...mapState(["select"]),
+    ...mapGetters(["ShowMenuSelect"]),
   },
 };
 </script>

@@ -5,22 +5,22 @@
     </div>
     <div class="row">
       <product
-        v-for="(item, index) in Menuitem"
+        v-for="(item, index) in SearchMenu"
         :key="index"
         :NameProduct="item.NameProduct"
         :img="item.img"
         :Price="item.Price"
         :id="index"
-        @Order="menuorder"
+
       />
     </div>
-    
+
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import { mapState } from "vuex";
+import { mapGetters } from "vuex";
 import Product from "../components/Product.vue";
 export default {
   name: "Home",
@@ -28,7 +28,7 @@ export default {
     Product,
   },
   computed: {
-    ...mapState(["Menuitem"]),
+    ...mapGetters(["SearchMenu"]),
   },
 };
 </script>
